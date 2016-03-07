@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head><title>SVG Demo</title></head>
+  <body>
+    <svg id="vimage" height="500"
+	  width="1000" style="border: 1px solid;">
+      <circle id="circle" cx="250" cy="250" r="100"
+	            fill="yellow" stroke="black"/>
+    </svg>
+  </body>
+<script src="growshrink.js"></script>

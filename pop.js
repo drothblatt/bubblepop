@@ -1,11 +1,11 @@
-//svg connection                                                               
-var pic = document.getElementById("vimage");
 
+//svg connection                                                               
+var restart_btn = document.getElementById("restart_btn");
 
 var intervalID;
 var radius = 0;
 var playing = false;
-var time=0;
+var time = 0;
 var score = 0;
 var bubble = document.getElementById("circle");
 var scoreDisplay = document.getElementById("score");
@@ -21,9 +21,6 @@ var tickTimer = function(){
 
 //Probably need to do something more than a console log
 var displayScoreScreen = function(){
-    
-
-
     console.log("game over");
 };
 
@@ -42,7 +39,8 @@ var play = function(e){
 	moveBubble();
 	score+=1;
 	//update score display
-	scoreDisplay.innerHTML = "Score: "+score;
+	console.log(score);
+	scoreDisplay.innerHTML = "Score: "+ score;
     }    
 };
 
@@ -66,6 +64,19 @@ var onBubble = function(mouseX, mouseY){
     return false;
 };
 
+var reset = function(){
+    playing = false;
+    time = 0;
+    score = 0;
+    bubble.setAttribute("cx",300);
+    bubble.setAttribute("cy",300);
+    bubble.setAttribute("r", 50);
+    //console.log("playing: " + playing);
+    //console.log("time: " + time);
+    //console.log("score: " + score);
+
+};
+
 //move bubble
 //timer
 //scoreboard/end screen display
@@ -75,4 +86,5 @@ var onBubble = function(mouseX, mouseY){
 //listen for mouse click
 //not working
 canvas = document.getElementById("vimage");
-canvas.addEventListener('click',play);
+restart_btn.addEventListener('click', reset);
+canvas.addEventListener('click', play);

@@ -12,11 +12,13 @@ var scoreDisplay = document.getElementById("score");
 var timeDisplay = document.getElementById("timer");
 
 var tickTimer = function(){
-    time+=1;
-    timeDisplay.innerHTML = "Time Left: "+ (60-time);
-    if( time >= 60){
+    if (time < 60){
+	time+=1;
+    } else{
 	displayScoreScreen();
     }
+    timeDisplay.innerHTML = "Time Left: "+ (60-time);
+
 };
 
 //Probably need to do something more than a console log
@@ -30,11 +32,11 @@ var play = function(e){
 //    if(e.offsetX < //
 
     //e.preventDefault();
-    if (onBubble(e.offsetX, e.offsetY)){
+    if (onBubble(e.offsetX, e.offsetY) && time < 60){
 	
 	if(!playing){
 	    playing = true;
-	    setInterval(tickTimer,1000);
+	    intervalID = setInterval(tickTimer,1000);
 	};
 	moveBubble();
 	score+=1;
@@ -68,6 +70,7 @@ var reset = function(){
     playing = false;
     time = 0;
     score = 0;
+    clearInterval(intervalID);
     bubble.setAttribute("cx",300);
     bubble.setAttribute("cy",300);
     bubble.setAttribute("r", 50);

@@ -2,22 +2,38 @@
 <html>
   <head>
     <title>BubblePOP</title>
-    <h2> BubblePOP </h2> 
-    <h3> Nellie Spektor, Jion Fairchild, David Rothblatt </h3>
+   
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <i> click on the bubble to start the timer </i> <br><br>
-    <h2 id="gameOver"></h2>
-    <svg id="vimage" height="600"
-	  width="600" style="border: 1px solid;">
-      <image xlink:href="http://www.birthdaydirect.com/images/29787-ocean-and-sky-backdrop.jpg" x="0" y="0" height="600px" width="600px"/>
-      <circle id="circle" cx="300" cy="300" r="50"
-	            fill="aqua" stroke="black"/>
-    </svg>
-    <h3 id="score"> Score: 0</h3>
-    <h3 id="timer"> Time Left: 60 </h3>
-    <button type="button" id="restart_btn"> Restart </button>
+    <div class="container neighborhood-guides"> 
+      <h3> BubblePOP </h3> 
+      <h4> Nellie Spektor, Jion Fairchild, David Rothblatt </h4>
+    </div>
+
+    <div class="container col-md-6 pull-left">
+      <svg id="vimage" height="600"
+	   width="600" style="border: 1px solid;">
+	<image xlink:href="http://www.birthdaydirect.com/images/29787-ocean-and-sky-backdrop.jpg" x="0" y="0" height="600px" width="600px"/>
+	<circle id="circle" cx="300" cy="300" r="50"
+	        fill="aqua" stroke="black"/>
+      </svg>
+    </div>
+    <div class="container col-md-6 pull-right">
+      <i> click on the bubble to start the timer </i> 
+      <br><br><br>
+      <h3><u> Stats </u></h3> 
+      <h3 id="score"> Score: 0</h3>
+      <h3 id="timer"> Time Left: 60 </h3>
+      <button type="button" id="restart_btn"> Restart </button>
+
+    </div>
 
   </body>
 

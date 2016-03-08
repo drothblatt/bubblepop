@@ -74,6 +74,8 @@ var reset = function(){
     bubble.setAttribute("cx",300);
     bubble.setAttribute("cy",300);
     bubble.setAttribute("r", 50);
+    timeDisplay.innerHTML = "Time Left: "+ (60-time);
+    scoreDisplay.innerHTML = "Score: "+ score;
     //console.log("playing: " + playing);
     //console.log("time: " + time);
     //console.log("score: " + score);

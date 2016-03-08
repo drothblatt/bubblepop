@@ -10,6 +10,7 @@ var score = 0;
 var bubble = document.getElementById("circle");
 var scoreDisplay = document.getElementById("score");
 var timeDisplay = document.getElementById("timer");
+var gameOver = document.getElementById("gameOver");
 
 var tickTimer = function(){
     if (time < 60){
@@ -23,6 +24,8 @@ var tickTimer = function(){
 
 //Probably need to do something more than a console log
 var displayScoreScreen = function(){
+    gameOver.innerHTML = "Game Over! Click restart :) </h2><h2> Score: " +score;
+
     console.log("game over");
 };
 
@@ -76,6 +79,7 @@ var reset = function(){
     bubble.setAttribute("r", 50);
     timeDisplay.innerHTML = "Time Left: "+ (60-time);
     scoreDisplay.innerHTML = "Score: "+ score;
+    gameOver.innerHTML = "";
     //console.log("playing: " + playing);
     //console.log("time: " + time);
     //console.log("score: " + score);

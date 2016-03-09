@@ -23,8 +23,8 @@ var tickTimer = function(){
 
 //Probably need to do something more than a console log
 var displayScoreScreen = function(){
-    gameOver.innerHTML = "Game Over! Click restart. </h2><h3> Popping rate: " + score/60 + " pops/sec." ;
-
+    gameOver.innerHTML = "Game Over! Click restart. </h2><h3> Popping rate: "
+	+ Math.round( (score/60) * 100) / 100  + " pops/sec." ;
     console.log("game over");
 };
 

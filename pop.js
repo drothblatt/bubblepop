@@ -19,12 +19,11 @@ var tickTimer = function(){
 	displayScoreScreen();
     }
     timeDisplay.innerHTML = "Time Left: "+ (60-time);
-
 };
 
 //Probably need to do something more than a console log
 var displayScoreScreen = function(){
-    gameOver.innerHTML = "Game Over! Click restart :) </h2><h2> Score: " +score;
+    gameOver.innerHTML = "Game Over! Click restart. </h2><h3> Popping rate: " + score/60 + " pops/sec." ;
 
     console.log("game over");
 };
@@ -80,20 +79,11 @@ var reset = function(){
     timeDisplay.innerHTML = "Time Left: "+ (60-time);
     scoreDisplay.innerHTML = "Score: "+ score;
     gameOver.innerHTML = "";
-    //console.log("playing: " + playing);
-    //console.log("time: " + time);
-    //console.log("score: " + score);
+
 
 };
 
-//move bubble
-//timer
-//scoreboard/end screen display
 
-//window.setInterval(moveBubble(bubble), 500)
-
-//listen for mouse click
-//not working
 canvas = document.getElementById("vimage");
 restart_btn.addEventListener('click', reset);
 canvas.addEventListener('click', play);
